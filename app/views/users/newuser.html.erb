@@ -1,0 +1,22 @@
+<div id="page-wrapper">
+	<div class="main-page">
+        <h3 class="title1" align="center">Add New User</h3>
+		<%= simple_form_for @user do |f| %>
+        <div class="login-page">
+         <%= f.input :f_name, required: false,label: 'First Name'%>
+ 		 <%= f.input :l_name,label: 'Last Name' %>
+         <%= f.input :gender, as: :radio_buttons, :collection => [ ['Male', "Male"], ['Female', "Female"] ], :checked => ['Yes', true] %> 
+  		 <%= f.input :fathername %>
+         <%= f.input :dob, as: :date, html5: true,label: 'Date of Birth'%>
+         <%= f.input :email %>
+         <%= f.input :password %>
+         <%= f.input :phonenumber %>
+         <%= f.input :address %>
+         <%= f.input :zipcode %>
+         <%= f.input :city %>
+  		 <%= f.button :submit %>
+		<% end %>
+        </div>
+		<div class="clearfix"> </div>
+	</div>
+</div>

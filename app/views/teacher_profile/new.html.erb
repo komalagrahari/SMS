@@ -1,0 +1,68 @@
+<div id="page-wrapper">
+	<div class="main-page">
+        <h3 class="title1" align="center">Teacher Details </h3>
+        <h2 align="center">Personel Details</h2>
+        <%= simple_form_for :teacher_profile do |q| %>
+        <%= simple_fields_for :user do |f| %>
+        <div class="login-page">
+         <%= f.input :f_name, required: false,label: 'First Name'%>
+ 		     <%= f.input :l_name,label: 'Last Name' %>
+         <%= f.input :gender, as: :radio_buttons, :collection => [ ['Male', "Male"], ['Female', "Female"] ], :checked => ['Yes', true] %>
+  		   <%= f.input :fathername ,label: "Father's Name"%>
+         <%= q.input :marrigestatus, as: :radio_buttons, :collection => [ ['Married', "Married"], ['Single', "Single"] ], :checked => ['Yes', true] %>
+         <% if :marrigestatus == "Married" %>
+         <%= q.input :spousename ,label: 'Spouse Name'%>
+         <%= q.input :children ,label: 'Number of Children'%>
+         <%end%>
+         <%= f.input :dob, as: :date, html5: true,label: 'Date of Birth'%>
+         <%= q.input :adhaarnumber ,label: 'Adhaar Card Number'%> 
+         <%= f.input :email %>
+         <%= f.input :password %>
+         <%= f.input :phonenumber %>
+         <%= f.input :address %>
+         <%= f.input :zipcode %>
+         <%= f.input :city %>
+         <%= f.hidden_field :role_id, :value => "3" %>
+         <h2 align="center">Professional Details</h2>
+         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            Add Experience
+         </button><br>
+         <h4 align="center">Subjects</h4>
+         <%= q.input :subject1 ,label: 'Subject 1'%>
+         <%= q.input :subject2 ,label: 'Subject 2'%>
+         <%= q.input :subject3 ,label: 'Subject 3'%>  
+         
+         
+          
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby ="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+              <h4>Experience      <%= q.select :experience ,[ '1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'], prompt: 'Experience in Years'%></h4>
+              <%= q.input :recentschool ,label: 'Recent School'%>
+              <%= q.input :recentclass ,label: 'Recent Class'%>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+         </div><br>    
+         <h4 align="center">New Class Assignment</h4><br>
+         <div align="center">  
+         <%= q.select :newclass ,[ '1','2','3','4','5','6','7','8','9','10','11','12'], prompt: 'Select Class'%>                                                    <%= q.select :section ,['A','B','C','D','E'], prompt: 'Select Section' ,label: 'New Section'%> 
+         </div>
+         <%= q.button :submit %>       
+		     <% end %>
+         <% end %>
+        </div>
+		<div class="clearfix"> </div>
+	</div>
+</div>

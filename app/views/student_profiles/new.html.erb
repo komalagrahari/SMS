@@ -1,0 +1,38 @@
+<div id="page-wrapper">
+	<div class="main-page">
+        <h3 class="title1" align="center">New Admission Details</h3>
+        <%= simple_form_for @student_profile do |q| %>
+        <%= simple_fields_for :user do |f| %>
+        <div class="login-page">
+         <%= f.input :f_name, required: false,label: 'First Name'%>
+ 		 <%= f.input :l_name,label: 'Last Name' %>
+         <%= f.input :gender, as: :radio_buttons, :collection => [ ['Male', "Male"], ['Female', "Female"] ], :checked => ['Yes', true] %> 
+  		 <%= f.input :fathername ,label: "Father's Name"%>
+         <%= q.input :mothername ,label: "Mother's Name"%>
+         <%= q.input :guardianname ,label: "Guardian's Name"%>
+         <%= q.input :siblings ,label: 'Siblings in Same School'%>
+         <%= f.input :dob, as: :date, html5: true,label: 'Date of Birth'%>
+         <%= q.input :recentschool ,label: 'Recent School'%>
+         <%= q.input :recentclass ,label: 'Recent Class'%>
+         <%= q.input :newclass ,label: 'New Class'%> 
+         <%= q.input :section ,label: 'New Section'%>    
+         <%= q.input :adhaarnumber ,label: 'Adhaar Card Number'%> 
+         <%= f.input :email %>
+         <%= f.input :password %>
+         <%= f.input :phonenumber %>
+         <%= f.input :address %>
+         <%= q.input :otheraddress ,label: 'Correspondance Addresss'%>
+         <%= f.input :zipcode %>
+         <%= f.input :city %>
+         <%= f.hidden_field :role_id, :value => "2" %>
+         <h2 align="center">Medical Details</h2>
+         <%= q.input :bloodgroup ,label: 'Blood Group'%>
+         <%= q.input :diseases ,label: 'Diseases(if any)'%>
+         <%= q.input :allergy ,label: 'Allergies(if any)'%> 
+         <%= q.button :submit %>       
+		 <% end %>
+         <% end %>
+        </div>
+		<div class="clearfix"> </div>
+	</div>
+</div>

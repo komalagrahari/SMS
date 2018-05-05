@@ -1,0 +1,25 @@
+<div id="page-wrapper">
+      <div class="main-page">
+        <p id="notice"><%= notice %></p>
+        <ul class='menu-icon'>
+          <li><img src="/assets/createcourse.png" alt="" height="80px" width="80px"><br>
+          <%= link_to 'Create Course', new_subject_path %></li><br>
+
+          <li><img src="/assets/viewcourse.png" alt="" height="80px" width="80px"><br>
+          <%= link_to 'View Course', new_user_path %></li><br>
+
+         <li><img src="/assets/updatecourse.png" alt="" height="80px" width="80px"><br>
+         <%= link_to 'Update Course', new_user_path %></li><br>
+        </ul>
+
+        <ul class='menu-icon'>
+        <li><img src="/assets/addteacher.png" alt="" height="80px" width="80px"><br>
+        <%= link_to 'Create Teacher',  new_teacher_profile_path %></li><br>
+        <li><img src="/assets/admission.png" alt="" height="80px" width="80px"><br>
+        <%= link_to 'Update Teacher Profile', new_student_profile_path %></li><br>
+        <li><img src="/assets/timetable.png" alt="" height="80px" width="80px"><br>
+        <%= link_to 'Subject and Teacher', new_user_path %></li><br>
+        </ul>  
+      </div>
+      <div class="clearfix"> </div> 
+</div>

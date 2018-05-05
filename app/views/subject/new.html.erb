@@ -1,0 +1,32 @@
+<div id="page-wrapper">
+	<div class="main-page">
+	<div class="form-body" data-example-id="simple-form-inline">
+	<form class="form-inline"> 
+	 <div class="form-group">
+	 <ul class='menu-icon'>
+	 <li>
+	  <label for="exampleInputName2">Class</label> 
+	  <%= simple_form_for :subject do |f| %>
+	  <%= simple_fields_for :s_class do |q|%>
+	  <%= q.collection_select :id, SClass.order(:id), :id, :name, prompt: 'Select Class' %>  
+	  </li>
+	  <li>
+	  <div id='item'></div>
+	  <%= f.collection_check_boxes :id, Subject.all, :id, :name do |b| %>
+      <div class="collection-check-box">
+      <%= b.check_box %> <%= b.label %>
+      </div>
+  	  <% end %>
+	  <div id='item'>
+	  </div>
+	  </li>
+	  <li>
+	  <%= f.button :submit, :class => "btn btn-default",:value => "Save Course"%> </form> 
+	  <% end %>
+	  <% end %>
+	  </li>
+	  </ul> 
+	</div>
+	</div>
+	</div>
+</div>

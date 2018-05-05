@@ -1,0 +1,3 @@
+class SClassController < ApplicationController
+	
+end

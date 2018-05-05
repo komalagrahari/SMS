@@ -1,0 +1,31 @@
+<div id="page-wrapper">
+      <div class="main-page">
+			  <div class="tables">
+					<h3 class="title1">User List</h3>
+					<div class="panel-body widget-shadow">
+						<table class="table">
+							<thead>
+								<tr>
+								  <th>User Id</th>
+								  <th>Name</th>
+								  <th>Email</th>
+								</tr>
+							</thead>
+							
+							<tbody>
+							<% @user.each do |u| %>
+							<%= simple_form_for User.new do |f| %>
+								<tr>
+								  <td><%= u.id %></td>
+								  <td><%= u.f_name %></td>
+								  <td><%= u.email %></td>
+								</tr>
+							</tbody>
+							<% end %>
+							<% end %>
+						</table>
+					</div>
+				</div>
+			</div>
+    <div class="clearfix"> </div> 
+</div>
